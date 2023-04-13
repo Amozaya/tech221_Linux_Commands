@@ -22,3 +22,34 @@
 * `history` - history of all commands used
 * `rm -rf <file_name>` - `-rf` forces file removal in case it's open or needs permission
 * `sudo <command>` - `sudo` grants admin permission 
+* `head -1 <file_name>` - prints the first line from the file
+* `nl <file_name>` - asigns numbers to each line of text
+* `tail -1 <file_name>` - prints the last line from the file
+* `sort <file_name>` - sort the content in alphabetical order
+* `cat <file_name> |grep <content>` - searches file for specific content and prints it out
+* `sudo su` - enters into Admin mode
+* `apt ....` - package manager
+* `sudo systemctl stop/start nginx` - used to stop/start process
+* `sudo apt install nginx` - install nginx
+* `sudo apt update/upgrade -y` - used to update/upgrade services. `-y` will automate responce "Yes"
+* `service nginx status` - check the status of nginx service
+* script to automate update/upgrade, installation and enabling of nginx:
+  * `sudo touch provision.sh` - create a scipt file
+  * `sudo nano provision.sh` - open the file with nano
+  * use follwing to add to your script:
+  
+    `#!/bin/bash`
+    
+    `sudo apt update -y`
+
+    `sudo apt upgrade -y`
+
+    `sudo apt install nginx -y`
+
+    `sudo systemctl restart nginx`
+
+    `sudo systemctl enable nginx`
+    
+   * `sudo chmod +x provision.sh` - make file executable
+   * `sudo ./provision.sh` - execute file
+
